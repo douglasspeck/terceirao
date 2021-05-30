@@ -9,7 +9,7 @@ body {
     overflow: hidden;
     background-color: black;
     color: white;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
@@ -101,15 +101,25 @@ a {
     background-position: 100% 50%;
 }
 
-footer {
+.toggle-footer {
     display: block;
     width: 70%;
     position: absolute;
     bottom: 1%;
+    font-size: small;
+}
+
+footer {
+    width: 100%;
+    height: 100%;
 }
 
 footer p {
-    font-size: small;
+    font-size: inherit;
+}
+
+#toggle-footer {
+    visibility: hidden;
 }
 
 @keyframes link {
@@ -187,7 +197,137 @@ footer p {
     .right {
         width: 35%;
     }
+    footer {
+        display: none;
+        position: static;
+        font-size: inherit;
+        margin: auto;
+    }
     p {
+        font-size: inherit;
+    }
+    .toggle-footer {
+        content: "";
+        display: block;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(#ffcbe9, #ffcbe9);
+        background-size: 100% 100%;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        width: 3vh;
+        height: 3vh;
+        border: 2px solid #fff;
+        border-radius: 2vh;
+        visibility: visible;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 5vh;
+        overflow: hidden;
+        animation: menu-untoggle 2s;
+        font-size: 0px;
+    }
+    .toggle-footer:after {
+        content: "?";
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: #000;
         font-size: large;
+        font-weight: bold;
+        transition: all 2s ease-out;
+    }
+    #toggle-footer:checked ~ .toggle-footer {
+        animation: menu-toggle 2s;
+        animation-fill-mode: forwards;
+    }
+    #toggle-footer:checked ~ .toggle-footer:after {
+        display: none;
+    }
+    #toggle-footer:checked ~ .toggle-footer footer {
+        display: block;
+    }
+}
+
+@keyframes menu-toggle {
+    0% {
+        margin: 5vh;
+        border: 2px solid #000;
+        border-radius: 2vh;
+        width: 3vh;
+        height: 3vh;
+        transform: rotate(0);
+        background-size: 100% 100%;
+        font-size: 0px;
+    }
+    30% {
+        width: 10vh;
+        height: 10vh;
+        border: none;
+        border-radius: 0;
+        transform: rotate(360deg);
+        margin: 0;
+    }
+    60% {
+        width: 100%;
+        height: 10vh;
+        border-radius: 0;
+        transform: rotate(360deg);
+        margin: 0;
+        background-size: 100% 100%;
+        font-size: 0px;
+    }
+    100% {
+        width: 100%;
+        height: 10vh;
+        border: none;
+        border-radius: 0;
+        transform: rotate(360deg);
+        margin: 0;
+        background-size: 100% 0;
+        font-size: small;
+    }
+}
+
+@keyframes menu-untoggle {
+    0% {
+        width: 100%;
+        height: 10vh;
+        border: none;
+        border-radius: 0;
+        transform: rotate(360deg);
+        margin: 0;
+        background-size: 0 100%;
+        font-size: small;
+    }
+    30% {
+        width: 100%;
+        height: 10vh;
+        border-radius: 0;
+        transform: rotate(360deg);
+        margin: 0;
+        background-size: 100% 100%;
+        font-size: 0px;
+    }
+    60% {
+        width: 10vh;
+        height: 10vh;
+        border: none;
+        border-radius: 0;
+        transform: rotate(360deg);
+        margin: 0;
+    }
+    100% {
+        width: 3vh;
+        height: 3vh;
+        border: 2px solid #fff;
+        border-radius: 2vh;
+        margin: 5vh;
+        transform: rotate(0);
+        font-size: 0px;
     }
 }
