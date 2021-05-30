@@ -94,7 +94,6 @@ a {
 }
 
 .toggle-footer {
-    display: block;
     width: 70%;
     position: absolute;
     bottom: 1%;
@@ -110,8 +109,8 @@ footer p {
     font-size: inherit;
 }
 
-#toggle-footer {
-    visibility: hidden;
+#toggle-footer, .toggle-footer {
+    display: none;
 }
 
 @keyframes link {
@@ -181,22 +180,22 @@ footer p {
         width: 80%;
     }
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .container {
         width: 100%;
         margin: auto;
     }
     .bigger {
-        font-size: 5.5rem;
+        font-size: 4rem;
     }
     .left {
-        width: 50%;
-        margin-right: 2%;
+        width: 40%;
+        margin-right: 5%;
     }
     .right {
-        width: 30%;
-        margin-left: 2%;
+        width: 35%;
+        margin-left: 5%;
     }
     footer {
         display: none;
@@ -206,6 +205,11 @@ footer p {
     }
     p {
         font-size: small;
+    }
+    #toggle-footer {
+        display: block;
+        visibility: hidden;
+        position: absolute;
     }
     .toggle-footer {
         content: "";
@@ -222,7 +226,7 @@ footer p {
         border: 2px solid #fff;
         border-radius: 2vh;
         visibility: visible;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         right: 0;
         margin: 5vh;
