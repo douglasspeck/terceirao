@@ -11,12 +11,6 @@ As an incoming web-dev, I couldn't resist creating a <a href="www.terceirao.onli
 </p>
 
 <p align="center">
-  <a aria-label="build status" href="https://github.com/douglasspeck/terceirao/actions/workflows/ci.yml">
-    <img alt="" src="https://github.com/primer/css/actions/workflows/ci.yml/badge.svg">
-  </a>
-  <a aria-label="contributors graph" href="https://github.com/douglasspeck/terceirao/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/primer/css.svg">
-  </a>
   <a aria-label="last commit" href="https://github.com/douglasspeck/terceirao/commits/master">
     <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">
   </a>
